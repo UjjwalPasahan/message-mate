@@ -6,14 +6,14 @@ import cors from 'cors'
 
 dotenv.config()
 const app = express()
-app.use(express.json({limit: "16kb"}))
-app.use(express.urlencoded({extended: true, limit: "16kb"}))
-app.use(express.static("public"))
-app.use(cookieParser())
 app.use(cors({
     origin: 'http://localhost:3000', // Replace with your frontend's URL in production
     credentials: true
 }));
+app.use(express.json({limit: "16kb"}))
+app.use(express.urlencoded({extended: true, limit: "16kb"}))
+app.use(express.static("public"))
+app.use(cookieParser())
 
 
 
